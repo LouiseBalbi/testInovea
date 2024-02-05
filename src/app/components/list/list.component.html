@@ -6,7 +6,7 @@
     <th>Date</th>
     <th>Image</th>
   </tr>
- <tr *ngFor="let gameModel of gameModels">
+ <tr *ngFor="let gameModel of gameModels" [routerLink]="['/model', gameModel.id]">
   <td >{{gameModel.name}}</td>
   <td >{{gameModel.date | date:"EEEE dd MMMM yyyy"}}</td>
   <td ><img src="assets/images-models/{{gameModel.modelName}}.png" alt=""></td>

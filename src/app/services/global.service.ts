@@ -15,4 +15,8 @@ export class GlobalService {
   getList(): Observable<GameModel[]> {
     return this.http.get<GameModel[]>(this.gameModelUrl);
   }
+
+  getModelById(id: string): Observable<GameModel> {
+    return this.http.get<GameModel>(this.gameModelUrl + "/" + id);
+  }
 }
