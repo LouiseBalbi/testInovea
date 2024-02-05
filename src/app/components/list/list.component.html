@@ -1,1 +1,14 @@
-<p>list works!</p>
+<h1>Liste des modèles</h1>
+
+<table id="customers">
+  <tr>
+    <th>Nom</th>
+    <th>Date</th>
+    <th>Image</th>
+  </tr>
+ <tr *ngFor="let gameModel of gameModels">
+  <td >{{gameModel.name}}</td>
+  <td >{{gameModel.date | date:"EEEE dd MMMM yyyy"}}</td>
+  <td ><img src="assets/images-models/{{gameModel.modelName}}.png" alt=""></td>
+</tr>
+</table>
