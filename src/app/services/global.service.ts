@@ -26,7 +26,8 @@ export class GlobalService {
       author: authorM,
       polygons: polygonsM,
       description: descriptionM,
-      date: new Date()
+      date: new Date(),
+      modelName: "picnic"
     }
     return this.http.post<any>(this.gameModelUrl, body);
   }
