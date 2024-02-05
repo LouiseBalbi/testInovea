@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GameModel } from 'src/app/models/gameModel';
 import { GlobalService } from 'src/app/services/global.service';
 
@@ -12,7 +13,7 @@ export class DetailsModelComponent implements OnInit {
 
   currentModel = new GameModel();
 
-  constructor(private globalService: GlobalService, private route: ActivatedRoute) { }
+  constructor(private globalService: GlobalService, private route: ActivatedRoute, private router: Router, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -27,4 +28,16 @@ export class DetailsModelComponent implements OnInit {
      })
   }
 
+  deleteModel(id: string) {
+    this.globalService.deleteModel(id).subscribe(res => {
+      this.openSnackBar("Modèle supprimé", "X");
+      this.router.navigate(['/list']);
+    }, error => {
+      this.openSnackBar("Une erreur est survenue", "X");
+    });
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
 }

@@ -30,4 +30,8 @@ export class GlobalService {
     }
     return this.http.post<any>(this.gameModelUrl, body);
   }
+
+  deleteModel(id: string): Observable<any> {
+    return this.http.delete<any>(this.gameModelUrl + "/" + id);
+  }
 }

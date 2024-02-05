@@ -2,7 +2,7 @@ export class GameModel {
   id: string;
   name: string;
   description: string;
-  date: number;
+  date: Date;
   author: string;
   polygons: number;
   modelName: string;
