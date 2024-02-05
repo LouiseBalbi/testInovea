@@ -15,13 +15,8 @@ import { CreateModelComponent } from './components/create-model/create-model.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
-import { DATE_PIPE_DEFAULT_OPTIONS, registerLocaleData } from '@angular/common';
-import { MAT_DATE_LOCALE } from '@angular/material/core';
-import localeFr from '@angular/common/locales/fr';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
-
-registerLocaleData(localeFr, 'fr');
 
 
 @NgModule({
@@ -46,11 +41,7 @@ registerLocaleData(localeFr, 'fr');
     MatIconModule,
     MatProgressSpinnerModule
   ],
-  providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'fr-FR' },
-    {provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: {timezone: 'fr-FR'}}
-
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -17,5 +17,5 @@
   </mat-form-field>
 
   <button mat-raised-button color="primary" type="submit" [disabled]="!modelForm.valid">Valider</button>
-  <button mat-raised-button color="error" routerLink="/list">Annuler</button>
+  <button mat-raised-button color="error" [routerLink]="['/model', id]">Annuler</button>
 </form>
