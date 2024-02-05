@@ -1,5 +1,7 @@
 <h1>Liste des modèles</h1>
 
+<button mat-raised-button routerLink="/create-model" color="primary">Ajouter un modèle</button>
+
 <table id="customers">
   <tr>
     <th>Nom</th>
@@ -9,6 +11,6 @@
  <tr *ngFor="let gameModel of gameModels" [routerLink]="['/model', gameModel.id]">
   <td >{{gameModel.name}}</td>
   <td >{{gameModel.date | date:"EEEE dd MMMM yyyy"}}</td>
-  <td ><img src="assets/images-models/{{gameModel.modelName}}.png" alt=""></td>
+  <td ><img *ngIf="gameModel.modelName" src="assets/images-models/{{gameModel.modelName}}.png" alt=""></td>
 </tr>
 </table>

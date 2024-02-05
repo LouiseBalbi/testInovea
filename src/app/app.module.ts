@@ -10,12 +10,17 @@ import { ListComponent } from './components/list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsModelComponent } from './components/details-model/details-model.component';
 import {MatButtonModule} from '@angular/material/button';
+import { UpdateModelComponent } from './components/update-model/update-model.component';
+import { CreateModelComponent } from './components/create-model/create-model.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    DetailsModelComponent
+    DetailsModelComponent,
+    UpdateModelComponent,
+    CreateModelComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,4 +19,15 @@ export class GlobalService {
   getModelById(id: string): Observable<GameModel> {
     return this.http.get<GameModel>(this.gameModelUrl + "/" + id);
   }
+
+  createModel(nameM: string, authorM: string, polygonsM: number, descriptionM: string): Observable<any> {
+    const body = {
+      name: nameM,
+      author: authorM,
+      polygons: polygonsM,
+      description: descriptionM,
+      date: new Date()
+    }
+    return this.http.post<any>(this.gameModelUrl, body);
+  }
 }
