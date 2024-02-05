@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/services/global.service';
 
@@ -17,14 +18,20 @@ export class CreateModelComponent  {
     description: new FormControl('')
   })
 
-  constructor(private globalService: GlobalService, private router: Router){}
+  constructor(private globalService: GlobalService, private router: Router, private _snackBar: MatSnackBar){}
 
 
   onSubmit() {
     this.globalService.createModel(this.modelForm.value.name, this.modelForm.value.author, this.modelForm.value.polygons, this.modelForm.value.description).subscribe(res => {
+      this.openSnackBar("Modèle créé avec succès", "X");
       this.router.navigate(['/list']);
-
+    }, error => {
+      this.openSnackBar("Une erreur est survenue", "X");
     })
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
 
 }
