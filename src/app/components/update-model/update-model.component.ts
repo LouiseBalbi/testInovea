@@ -42,7 +42,7 @@ export class UpdateModelComponent implements OnInit {
   onSubmit() {
     this.globalService.updateModel(this.id, this.modelForm.value.name, this.modelForm.value.author, this.modelForm.value.polygons, this.modelForm.value.description).subscribe(res => {
       this.openSnackBar("Modèle modifié avec succès", "X");
-      this.router.navigate(['/list']);
+      this.router.navigate(['/model/', this.id]);
     }, error => {
       this.openSnackBar("Une erreur est survenue", "X");
     })

@@ -2,14 +2,17 @@
   margin-bottom: 20px;
   line-height: 2;
   display: flex;
-    align-items: center;
+  align-items: center;
+
   img {
     margin-right: 30px;
   }
+
   .details .label {
     font-weight: 500;
   }
 }
+
 button.modify {
   margin-right: 20px;
 }
@@ -17,4 +20,14 @@ button.modify {
 button.delete {
   background-color: red;
   color: white;
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    img {
+      margin: unset;
+    }
+  }
 }

@@ -14,3 +14,7 @@
   <td ><img *ngIf="gameModel.modelName" src="assets/images-models/{{gameModel.modelName}}.png" alt=""></td>
 </tr>
 </table>
+<div class="loading">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+</div>
