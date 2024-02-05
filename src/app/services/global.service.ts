@@ -31,6 +31,16 @@ export class GlobalService {
     return this.http.post<any>(this.gameModelUrl, body);
   }
 
+  updateModel(id: string, nameM: string, authorM: string, polygonsM: number, descriptionM: string): Observable<any> {
+    const body = {
+      name: nameM,
+      author: authorM,
+      polygons: polygonsM,
+      description: descriptionM
+    }
+    return this.http.put<any>(this.gameModelUrl + '/' + id, body);
+  }
+
   deleteModel(id: string): Observable<any> {
     return this.http.delete<any>(this.gameModelUrl + "/" + id);
   }

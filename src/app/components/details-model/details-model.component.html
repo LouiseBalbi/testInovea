@@ -8,5 +8,5 @@
   <div class="details"><span class="label">Description : </span>{{currentModel.description}}</div>
 </div>
 
-<button mat-raised-button color="primary">Modifier</button>
+<button mat-raised-button color="primary" [routerLink]="['/update-model', currentModel.id]">Modifier</button>
 <button mat-raised-button color="error" (click)="deleteModel(currentModel.id)">Supprimer</button>
